@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Attr = Sitram KOLi 
+source/includes  => 1 https://github.com/ajaxorg/ace  (ace) 
+           2 https://interactjs.io
+         Free Open open source Tan,
+          ::::: Dont  SEll ::::::
+-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Compiler</title>
+
+
+                
+  <style type="text/css"> 
+body { overflow:hidden; margin:0;  }
+
+    .Input #editor::-webkit-scrollbar{
+      width:thin;
+    }
+    .Input #editor::-webkit-scrollbar-thumb {
+       background:red
+    }
+    .headingcompiler { background:rgb(209, 177, 255);
+    }
+    .headingcompiler h1{ text-align: center;
+    }
+  
+  
+ .Input #editor { 
+   scrollbar-color: rgba(171, 150, 150, 0.67) rgba(237, 237, 237, 1);
+   background-color: rgb(251, 243, 255);
+    position:absolute;
+     bottom:0;
+     left:0;
+   right:20%;
+ font-weight: normal;
+  color:rgba(18, 18, 18, 0.98);
+  /*font-family : sans-serif !important; font-size:50px!important;  direction:1tr !important;text-align:left !important;*/
+  scrollbar-width: thin;
+  margin-top: 5%;
+    }
+   
+    
+	
+
+ 
+  .same { 
+       top:0;   /* cosmize Height top buttom */ 
+  }   
+  
+  .output{ position:absolute;left:80%;right:0; bottom:0; 
+        box-shadow: -3px 2px 20px 0px rgb(97, 100, 124); 
+       border-left:inset 10px rgba(255, 255, 255, 0); 
+        touch-action: none;
+     box-sizing: border-box; 
+    }  
+    .ace_gutter-layer  { background:rgb(209, 177, 255)}
+    
+   .output iframe {border:none; box-sizing: border-box;display: block; touch-action: none;
+       margin:0; width:100%; overflow-x:hidden; height:100%; 
+    }
+    .output .ss { position:absolute; top:0; bottom:0; left:0; right:0;display:none; 
+      
+    }
+ 
+  </style>
+  
+    
+  </head> 
+<body>
+  <div class="navbar">
+    <div class="logo-container">
+        <img src="images/AK logo.png" alt="logo" height="100px" width="300px" />
+    </div>
+    <div class="nav-content" id="nav-content">
+        <a href="index.html" class="nav-link">Intro</a>
+        <a href="Editor.html" class="nav-link">Editors</a>
+        <a href="Attribute.html" class="nav-link">Attributes</a>
+        <a href="Heading.html" class="nav-link">Headings</a>
+        <a href="paragraph.html" class="nav-link">Paragraphs</a>
+        <a href="Style.html" class="nav-link">Styles</a>
+        <a href="formatting.html" class="nav-link">Formatting</a>
+        <a href="Quotations.html" class="nav-link">Quotation</a>
+        <a href="Colors.html" class="nav-link">Colors</a>
+        <a href="Css.html" class="nav-link">Css</a>
+        <a href="Links.html" class="nav-link">Links</a>
+        <a href="Images.html" class="nav-link">Images</a>
+        <a href="Tables.html" class="nav-link">Tables</a>
+        <a href="lists.html" class="nav-link">Lists</a>
+        <a href="Iframes.html" class="nav-link">Iframes</a>
+        <a href="Login.html" class="nav-link">Login</a>
+        <a href="Media.html" class="nav-link">Media</a>
+        <a href="Compiler.html" class="nav-link">Compiler</a>
+        <!-- Add more links here -->
+    </div>
+</div>
+<hr><hr><hr>
+<script type="text/javascript">
+    // JavaScript to handle the active link
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            // Remove the "active" class from all links
+            navLinks.forEach((navLink) => {
+                navLink.classList.remove("active");
+            });
+
+            // Add the "active" class to the clicked link
+            link.classList.add("active");
+        });
+    });
+</script>
+<br><br><br><hr>
+  
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js' ></script>
+ <div class="headcompiler">
+  <h1>COMPILER</h1>
+ </div>
+  <div class="Input"> 
+      
+    <div id="editor" class='same' stype="display:block">
+   </div>
+  </div>   <!--end  Editor-->
+  
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js"> </script>
+ <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script> 
+ 
+  <script>
+     var [iframe,main,dubbing ] = [document.createElement("iframe"),document.createElement("main"),document.createElement("div")]; 
+      iframe.setAttribute('style','display:block;');main.classList = 'output same'; dubbing.classList = "ss"; main.append(iframe,dubbing); ss('.Input').after(main);
+ function flow_load (theme) { var editor = ace.edit("editor");editor.setTheme(theme); editor.session.setMode("ace/mode/html");}    
+ var editor = ace.edit("editor");editor.setTheme("ace/theme/chrome");editor.session.setMode("ace/mode/html"); var koli = editor;
+      
+     
+     //koli.getTheme() setOptions  ace
+   koli.setOptions({cursorStyle:"smooth",behavioursEnabled:true,highlightGutterLine:true,animatedScroll:true, fontSize: "16px",foldStyle:"markbegin",showPrintMargin:0,enableLiveAutocompletion:true,enableBasicAutocompletion:true,}); 
+   //sort Keys 
+    koli.commands.addCommand({ name: "input_full",bindKey: {win: 'Ctrl-i',  mac: 'Command-i'}, exec: function(editor) {
+       var action = ss('.output'),ed = ss('#editor');if(action.style.display == 'none'){action.style.display  = 'block'; if(action.style.width.length > 0){ ed.style.right = action.style.width } else { ed.style.right  = "20%";}flow_load (koli.getTheme())  }else { action.style.display  = 'none';  ed.style.right  = "0"; flow_load (koli.getTheme())}},
+      readOnly: true // false if this command should not apply in readOnly mode
+     });
+    
+      // end sort key      
+     
+  
+    //output
+  koli.setValue(`<!DOCTYPE html>\n<html>\n<head>\n<meta charset="utf-8">\n <meta name="viewport" content="width=device-width">\n <title>smaple</title></head>
+    <body>\n\n\n\n  </body>\n</html>`);   // start value
+    
+    var sesssin =  window.sessionStorage.getItem('backup');  // current  bar session
+         if(sesssin == null){
+          iframe.srcdoc = koli.getValue();
+         }else {
+           koli.setValue(sesssin);
+           iframe.srcdoc = sesssin;
+         }
+       
+        koli.clearSelection() ;
+        koli.on('change',function(){ 
+          window.sessionStorage.setItem('backup',koli.getValue());
+           iframe.srcdoc = koli.getValue();
+       });  
+    
+    
+  
+
+    interact('.output').resizable({
+    // resize from all edges and corners
+    
+    edges: { left: true, right: false, bottom: false, top: false },
+    onstart: function (event) {ss('.ss').style.display = 'block'},
+     onend  : function (event) {ss('.ss').style.display = 'none'},
+    listeners: { 
+      move (event) { 
+        var target = event.target
+        var x = (parseFloat(target.getAttribute('data-x')) || 0)
+        var y = (parseFloat(target.getAttribute('data-y')) || 0)
+             
+        // update the element's style 
+          ss('#editor').style.right = event.rect.width+"px"; 
+           
+        target.style.width = event.rect.width+"px"; //event.rect.width + 'px' 
+           flow_load (koli.getTheme());
+    
+             
+        
+        x += event.deltaRect.left; 
+       // y += event.deltaRect.top
+
+        target.style.transform = 'translate(' + x + 'px,' + y + 'px)'
+
+        target.setAttribute('data-x', x) 
+        target.setAttribute('data-y', y)
+       
+      }
+    },
+    modifiers: [
+      // keep the edges inside the parent
+      interact.modifiers.restrictEdges({
+        outer: 'parent'
+      }),
+
+      // minimum size 
+      interact.modifiers.restrictSize({   
+       min:{width:70},
+       max:{width:1300}
+      })
+    ],
+  
+    inertia: true
+  });
+    
+    
+       
+ 
+    
+        
+function ss(a){return document.querySelector(a)}
+function all(x){return document.querySelectorAll(x)} 
+    
+    
+    
+    
+    
+    
+    
+    
+</script>
+
+</body>
+</html>
