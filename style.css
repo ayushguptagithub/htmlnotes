@@ -67,7 +67,7 @@ body {
   display: flex;
 }
 .codeblock{
-  background-color:rgb(133, 133, 133);
+   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(17,62,255,1) 100%, rgba(0,212,255,1) 100%);
   margin: 30px;
   border-radius: 30px;
 }
@@ -137,7 +137,7 @@ overflow:auto;
   height: 66%;
   overflow: auto;
   border-radius: 12px;
-  background-color: #d3daff;
+  background-color: #2e2e2e;
 }
 
 .language {
