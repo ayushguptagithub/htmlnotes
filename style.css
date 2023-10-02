@@ -177,6 +177,7 @@ overflow:auto;
   overflow: auto;
   border-radius: 12px;
   background-color: #2e2e2e;
+  z-index:0;
 }
 
 .language {
