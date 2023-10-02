@@ -11,7 +11,7 @@
             left: 0;
             width: 100%;
             /* background-color: rgb(74, 74, 74); */
-            
+            z-index:3;
             background: rgb(2,0,36);
             background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(17,62,255,1) 100%, rgba(0,212,255,1) 100%);
             overflow-x: auto;
