@@ -41,3 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
   
     copyButton.addEventListener('click', copyTextHandler);
   });
+
+
+      function toggleNav() {
+            var x = document.getElementById("nav-hamburger");
+            if (x.classList.contains("responsive")) {
+                x.classList.remove("responsive");
+            } else {
+                x.classList.add("responsive");
+            }
+        }
