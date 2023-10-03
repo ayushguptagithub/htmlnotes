@@ -1,99 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="images/favicon.png">
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="prism.css" />
 
-    <title>Login Form</title>
-  </head>
-  <body>
-    <div class="navbar">
-      <div class="logo-container">
-          <img src="images/AK logo.png" alt="logo" height="100px" width="300px" />
-      </div>
-      <div class="nav-content" id="nav-content">
-          <a href="index.html" class="nav-link">Intro</a>
-          <a href="Editor.html" class="nav-link">Editors</a>
-          <a href="Attribute.html" class="nav-link">Attributes</a>
-          <a href="Heading.html" class="nav-link">Headings</a>
-          <a href="paragraph.html" class="nav-link">Paragraphs</a>
-          <a href="Style.html" class="nav-link">Styles</a>
-          <a href="formatting.html" class="nav-link">Formatting</a>
-          <a href="Quotations.html" class="nav-link">Quotation</a>
-          <a href="Colors.html" class="nav-link">Colors</a>
-          <a href="Css.html" class="nav-link">Css</a>
-          <a href="Links.html" class="nav-link">Links</a>
-          <a href="Images.html" class="nav-link">Images</a>
-          <a href="Tables.html" class="nav-link">Tables</a>
-          <a href="lists.html" class="nav-link">Lists</a>
-          <a href="Iframes.html" class="nav-link">Iframes</a>
-          <a href="Login.html" class="nav-link active">Login</a>
-          <a href="Media.html" class="nav-link">Media</a>
-          <a href="Compiler.html" class="nav-link">Compiler</a>
-          <!-- Add more links here -->
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="images/favicon.png">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="prism.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Login Form</title>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="logo-container">
+      <img src="images/AK logo.png" alt="logo" height="100px" width="300px" />
+    </div>
+    <div class="nav-content" id="nav-content">
+      <a href="index.html" class="nav-link">Intro</a>
+      <a href="Editor.html" class="nav-link">Editors</a>
+      <a href="Attribute.html" class="nav-link">Attributes</a>
+      <a href="Heading.html" class="nav-link">Headings</a>
+      <a href="paragraph.html" class="nav-link">Paragraphs</a>
+      <a href="Style.html" class="nav-link">Styles</a>
+      <a href="formatting.html" class="nav-link">Formatting</a>
+      <a href="Quotations.html" class="nav-link">Quotation</a>
+      <a href="Colors.html" class="nav-link">Colors</a>
+      <a href="Css.html" class="nav-link">Css</a>
+      <a href="Links.html" class="nav-link">Links</a>
+      <a href="Images.html" class="nav-link">Images</a>
+      <a href="Tables.html" class="nav-link">Tables</a>
+      <a href="lists.html" class="nav-link">Lists</a>
+      <a href="Iframes.html" class="nav-link">Iframes</a>
+      <a href="Login.html" class="nav-link active">Login</a>
+      <a href="Media.html" class="nav-link">Media</a>
+      <a href="Compiler.html" class="nav-link">Compiler</a>
+      <!-- Add more links here -->
+      <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
+        <input type="checkbox" role="button" aria-label="Display the menu" class="menu">
+      </a>
+    </div>
   </div>
-   <hr id="up"><hr><hr>
-    <a href="#up"><img src="images/arrow.png" height="100" width="100" style="float:right; position:absolute;right:7%;bottom:7%;position:fixed;z-index:2;"></a>
+  <hr id="up">
+  <hr>
+  <hr>
+  <div class="nav-hamburger" id="nav-hamburger">
+    <a href="index.html" class="nav-link">Intro</a>
+    <a href="Editor.html" class="nav-link">Editors</a>
+    <a href="Attribute.html" class="nav-link">Attributes</a>
+    <a href="Heading.html" class="nav-link">Headings</a>
+    <a href="paragraph.html" class="nav-link">Paragraphs</a>
+    <a href="Style.html" class="nav-link">Styles</a>
+    <a href="formatting.html" class="nav-link">Formatting</a>
+    <a href="Quotations.html" class="nav-link">Quotation</a>
+    <a href="Colors.html" class="nav-link">Colors</a>
+    <a href="Css.html" class="nav-link">Css</a>
+    <a href="Links.html" class="nav-link">Links</a>
+    <a href="Images.html" class="nav-link">Images</a>
+    <a href="Tables.html" class="nav-link">Tables</a>
+    <a href="lists.html" class="nav-link">Lists</a>
+    <a href="Iframes.html" class="nav-link">Iframes</a>
+    <a href="Login.html" class="nav-link">Login</a>
+    <a href="Media.html" class="nav-link">Media</a>
+    <a href="Compiler.html" class="nav-link">Compiler</a>
+
+    <!-- Add more links here -->
+  </div>
+  <a href="#up"><img class="bookmarkarrow" src="images/arrow.png" height="100" width="100" style="float:right; position:absolute;right:7%;bottom:7%;position:fixed;z-index:2;"></a>
   <script type="text/javascript">
-      // JavaScript to handle the active link
-      const navLinks = document.querySelectorAll(".nav-link");
+    // JavaScript to handle the active link
+    const navLinks = document.querySelectorAll(".nav-link");
 
-      navLinks.forEach((link) => {
-          link.addEventListener("click", () => {
-              // Remove the "active" class from all links
-              navLinks.forEach((navLink) => {
-                  navLink.classList.remove("active");
-              });
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        // Remove the "active" class from all links
+        navLinks.forEach((navLink) => {
+          navLink.classList.remove("active");
+        });
 
-              // Add the "active" class to the clicked link
-              link.classList.add("active");
-          });
+        // Add the "active" class to the clicked link
+        link.classList.add("active");
       });
+    });
   </script>
-  <br><br><br><hr>
-    <!-- This is for information -->
-<div class="info">
-  <h1>HTML Forms
+  <br><br><br>
+  <hr>
+  <!-- This is for information -->
+  <div class="info">
+    <h1>HTML Forms
     </h1>
     <h1>&lt;form&gt;</h1>
-  <p>An HTML form is used to collect user input. The user input is most often sent to a server for processing. 
-  </p>
+    <p>An HTML form is used to collect user input. The user input is most often sent to a server for processing.
+    </p>
 
-</div>
-<hr>
-    <!-- This is for information -->
-    <div class="info">
-      <h1>The &lt;input&gt; Element
-        </h1>
-      <p>The HTML <doc>&lt;input&gt;</doc> element is the most used form element.
-        
-        An <doc>&lt;input&gt;</doc> element can be displayed in many ways, depending on the type attribute.
-      </p>
-      <img src="images/form inputs.png" width="80%" height="20%" style="margin-left: 50px; "/>
-    
-    </div>
-    <hr>
+  </div>
+  <hr>
+  <!-- This is for information -->
+  <div class="info">
+    <h1>The &lt;input&gt; Element
+    </h1>
+    <p>The HTML <doc>&lt;input&gt;</doc> element is the most used form element.
 
-    <!-- This is for information -->
-<div class="info">
-  <h1>Text Fields
-  </h1>
-  <p>The <doc>&lt;input&gt;</doc> form type="text"&gt; defines a single-line input field for text input.
-  </p>
+      An <doc>&lt;input&gt;</doc> element can be displayed in many ways, depending on the type attribute.
+    </p>
+    <img src="images/form inputs.png" width="80%" height="20%" style="margin-left: 50px; " />
 
-</div>
+  </div>
+  <hr>
 
-<!-- this is for code block with its out put -->
-<div class="codeblock">
-  <h1>Example</h1>
-<div class="block">
-    <div class="container">
-      <div class="code-wrapper">
-        <pre>
+  <!-- This is for information -->
+  <div class="info">
+    <h1>Text Fields
+    </h1>
+    <p>The <doc>&lt;input&gt;</doc> form type="text"&gt; defines a single-line input field for text input.
+    </p>
+
+  </div>
+
+  <!-- this is for code block with its out put -->
+  <div class="codeblock">
+    <h1>Example</h1>
+    <div class="block">
+      <div class="container">
+        <div class="code-wrapper">
+          <pre>
           <code id="code" class="language-markup">
             &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -126,62 +157,67 @@
 
           </code>
         </pre>
-        <button id="copy-button">Copy</button>
+          <button id="copy-button">Copy</button>
+        </div>
       </div>
-    </div>
 
-    <span style='font-size:100px; margin-top:100px;'>&#8594;</span>
+      <span id="arrow" style='font-size:100px; margin-top:100px;'>&#8594;</span>
 
-    <div class="container">
-      <div class="code-wrapper">
-        <pre>
+      <div class="container">
+        <div class="code-wrapper">
+          <pre>
           <code id="code" class="">
             <img src="images/form input text field.png" />
 
           </code>
         </pre>
-        <button id="copy-button">Copy</button>
+          <button id="copy-button">Copy</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<hr>
-    <!-- This is for information -->
-    <div class="info">
-      <h1>The &lt;label&gt; Element
-      </h1>
-      <p>Notice the use of the <doc>&lt;label&gt;</doc> element in the example above.
+  <hr>
+  <!-- This is for information -->
+  <div class="info">
+    <h1>The &lt;label&gt; Element
+    </h1>
+    <p>Notice the use of the <doc>&lt;label&gt;</doc> element in the example above.
 
-The <doc>&lt;label&gt;</doc> tag defines a label for many form elements.
+      The <doc>&lt;label&gt;</doc> tag defines a label for many form elements.
 
-The <doc>&lt;label&gt;</doc> element is useful for screen-reader users, because the screen-reader will read out loud the label when the user focuses on the input element.
+      The <doc>&lt;label&gt;</doc> element is useful for screen-reader users, because the screen-reader will read out
+      loud the label when the user focuses on the input element.
 
-The <doc>&lt;label&gt;</doc> element also helps users who have difficulty clicking on very small regions (such as radio buttons or checkboxes) - because when the user clicks the text within the <doc>&lt;label&gt;</doc> element, it toggles the radio button/checkbox.
+      The <doc>&lt;label&gt;</doc> element also helps users who have difficulty clicking on very small regions (such as
+      radio buttons or checkboxes) - because when the user clicks the text within the <doc>&lt;label&gt;</doc> element,
+      it toggles the radio button/checkbox.
 
-The <doc>for</doc> attribute of the <doc>&lt;label&gt;</doc> tag should be equal to the id attribute of the <doc>&lt;input&gt;</doc> element to bind them together.
-      </p>
-    
-    </div>
-    <hr>
-    <!-- This is for information -->
-    <div class="info">
-      <h1>Radio Buttons
-        
-      </h1>
-      <p> <doc>&lt;input type="radio"&gt;</doc> defines a radio button.
-        
-        Radio buttons let a user select ONE of a limited number of choices.
-      </p>
-    
-    </div>
-    
-    <!-- this is for code block with its out put -->
-    <div class="codeblock">
-      <h1>Example</h1>
+      The <doc>for</doc> attribute of the <doc>&lt;label&gt;</doc> tag should be equal to the id attribute of the <doc>
+        &lt;input&gt;</doc> element to bind them together.
+    </p>
+
+  </div>
+  <hr>
+  <!-- This is for information -->
+  <div class="info">
+    <h1>Radio Buttons
+
+    </h1>
+    <p>
+      <doc>&lt;input type="radio"&gt;</doc> defines a radio button.
+
+      Radio buttons let a user select ONE of a limited number of choices.
+    </p>
+
+  </div>
+
+  <!-- this is for code block with its out put -->
+  <div class="codeblock">
+    <h1>Example</h1>
     <div class="block">
-        <div class="container">
-          <div class="code-wrapper">
-            <pre>
+      <div class="container">
+        <div class="code-wrapper">
+          <pre>
               <code id="code" class="language-markup">
                 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -206,47 +242,47 @@ The <doc>for</doc> attribute of the <doc>&lt;label&gt;</doc> tag should be equal
     
               </code>
             </pre>
-            <button id="copy-button">Copy</button>
-          </div>
+          <button id="copy-button">Copy</button>
         </div>
-    
-        <span style='font-size:100px; margin-top:100px;'>&#8594;</span>
-    
-        <div class="container">
-          <div class="code-wrapper">
-            <pre>
+      </div>
+
+      <span id="arrow" style='font-size:100px; margin-top:100px;'>&#8594;</span>
+
+      <div class="container">
+        <div class="code-wrapper">
+          <pre>
               <code id="code" class="">
                 <img src="images/form input radio field.png" />
     
               </code>
             </pre>
-            <button id="copy-button">Copy</button>
-          </div>
+          <button id="copy-button">Copy</button>
         </div>
       </div>
     </div>
-    <hr>
+  </div>
+  <hr>
 
 
-    <!-- This is for information -->
-    <div class="info">
-      <h1>Checkboxes
-      </h1>
-      <p>The <doc>&lt;input type="checkbox"&gt;</doc> defines a checkbox.
-        
-        Checkboxes let a user select ZERO or MORE options of a limited number of choices.
-        
-      </p>
-    
-    </div>
-    
-    <!-- this is for code block with its out put -->
-    <div class="codeblock">
-      <h1>Example</h1>
+  <!-- This is for information -->
+  <div class="info">
+    <h1>Checkboxes
+    </h1>
+    <p>The <doc>&lt;input type="checkbox"&gt;</doc> defines a checkbox.
+
+      Checkboxes let a user select ZERO or MORE options of a limited number of choices.
+
+    </p>
+
+  </div>
+
+  <!-- this is for code block with its out put -->
+  <div class="codeblock">
+    <h1>Example</h1>
     <div class="block">
-        <div class="container">
-          <div class="code-wrapper">
-            <pre>
+      <div class="container">
+        <div class="code-wrapper">
+          <pre>
               <code id="code" class="language-markup">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -269,77 +305,78 @@ The <doc>for</doc> attribute of the <doc>&lt;label&gt;</doc> tag should be equal
 &lt;/html&gt;
               </code>
             </pre>
-            <button id="copy-button">Copy</button>
-          </div>
+          <button id="copy-button">Copy</button>
         </div>
-    
-        <span style='font-size:100px; margin-top:100px;'>&#8594;</span>
-    
-        <div class="container">
-          <div class="code-wrapper">
-            <pre>
+      </div>
+
+      <span id="arrow" style='font-size:100px; margin-top:100px;'>&#8594;</span>
+
+      <div class="container">
+        <div class="code-wrapper">
+          <pre>
               <code id="code" class="">
                 <img src="images/form input checkbox field.png" />
     
               </code>
             </pre>
-            <button id="copy-button">Copy</button>
-          </div>
+          <button id="copy-button">Copy</button>
         </div>
       </div>
     </div>
-    <hr>
+  </div>
+  <hr>
 
-    <!-- This is for information -->
-    <div class="info">
-      <h1>The Action Attribute
-      </h1>
-      <p>The action attribute defines the action to be performed when the form is submitted.
-        
-        Usually, the form data is sent to a file on the server when the user clicks on the submit button.
-        
-      </p>
-    
-    </div>
-    <hr>
-    <!-- This is for information -->
-    <div class="info">
-      <h1>The Method Attribute
-      </h1>
-      <p>The <doc>method</doc> attribute specifies the HTTP method to be used when submitting the form data.
-        
-        The form-data can be sent as URL variables <doc>(with method="get")</doc> or as HTTP post transaction <doc>(with method="post")</doc>
-        
-        The default HTTP method when submitting form data is GET. </p>
-    
-    </div>
-    <hr>
-    <h1>Notes on GET:</h1>
-<p>Appends the form data to the URL, in name/value pairs
+  <!-- This is for information -->
+  <div class="info">
+    <h1>The Action Attribute
+    </h1>
+    <p>The action attribute defines the action to be performed when the form is submitted.
 
-NEVER use GET to send sensitive data! (the submitted form data is visible in the URL!)
+      Usually, the form data is sent to a file on the server when the user clicks on the submit button.
 
-The length of a URL is limited (2048 characters)
+    </p>
 
-Useful for form submissions where a user wants to bookmark the result
+  </div>
+  <hr>
+  <!-- This is for information -->
+  <div class="info">
+    <h1>The Method Attribute
+    </h1>
+    <p>The <doc>method</doc> attribute specifies the HTTP method to be used when submitting the form data.
 
-GET is good for non-secure data, like query strings in Google</p>
+      The form-data can be sent as URL variables <doc>(with method="get")</doc> or as HTTP post transaction <doc>(with
+        method="post")</doc>
 
-<h1>Notes on POST:</h1>
-<p>Appends the form data inside the body of the HTTP request (the submitted form data is not shown in the URL)
+      The default HTTP method when submitting form data is GET. </p>
 
-POST has no size limitations, and can be used to send large amounts of data.
+  </div>
+  <hr>
+  <h1>Notes on GET:</h1>
+  <p>Appends the form data to the URL, in name/value pairs
 
-Form submissions with POST cannot be bookmarked</p>
-<hr>
-    
-    <!-- this is for code block with its out put -->
-    <div class="codeblock">
-      <h1>Example</h1>
+    NEVER use GET to send sensitive data! (the submitted form data is visible in the URL!)
+
+    The length of a URL is limited (2048 characters)
+
+    Useful for form submissions where a user wants to bookmark the result
+
+    GET is good for non-secure data, like query strings in Google</p>
+
+  <h1>Notes on POST:</h1>
+  <p>Appends the form data inside the body of the HTTP request (the submitted form data is not shown in the URL)
+
+    POST has no size limitations, and can be used to send large amounts of data.
+
+    Form submissions with POST cannot be bookmarked</p>
+  <hr>
+
+  <!-- this is for code block with its out put -->
+  <div class="codeblock">
+    <h1>Example</h1>
     <div class="block">
-        <div class="container">
-          <div class="code-wrapper">
-            <pre>
+      <div class="container">
+        <div class="code-wrapper">
+          <pre>
               <code id="code" class="language-markup">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -372,38 +409,38 @@ Form submissions with POST cannot be bookmarked</p>
                 
               </code>
             </pre>
-            <button id="copy-button">Copy</button>
-          </div>
+          <button id="copy-button">Copy</button>
         </div>
-    
-        <span style='font-size:100px; margin-top:100px;'>&#8594;</span>
-    
-        <div class="container">
-          <div class="code-wrapper">
-            <pre>
+      </div>
+
+      <span id="arrow" style='font-size:100px; margin-top:100px;'>&#8594;</span>
+
+      <div class="container">
+        <div class="code-wrapper">
+          <pre>
               <code id="code" class="">
                 <img src="images/form method.png" />
     
               </code>
             </pre>
-            <button id="copy-button">Copy</button>
-          </div>
+          <button id="copy-button">Copy</button>
         </div>
       </div>
     </div>
+  </div>
+  <hr>
+
+  <!-- This is for information -->
+  <div class="info">
+    <h1>Sign Up Form
+    </h1>
+
     <hr>
 
-     <!-- This is for information -->
-     <div class="info">
-      <h1>Sign Up Form
-      </h1>
-  
-<hr>
-    
     <!-- this is for code block with its out put -->
     <div class="codeblock">
       <h1>Example</h1>
-    <div class="block">
+      <div class="block">
         <div class="container">
           <div class="code-wrapper">
             <pre>
@@ -540,9 +577,9 @@ Form submissions with POST cannot be bookmarked</p>
             <button id="copy-button">Copy</button>
           </div>
         </div>
-    
-        <span style='font-size:100px; margin-top:100px;'>&#8594;</span>
-    
+
+        <span id="arrow" style='font-size:100px; margin-top:100px;'>&#8594;</span>
+
         <div class="container">
           <div class="code-wrapper">
             <pre>
@@ -563,5 +600,6 @@ Form submissions with POST cannot be bookmarked</p>
 
     <script src="main.js" defer></script>
     <script src="prism.js"></script>
-  </body>
+</body>
+
 </html>
