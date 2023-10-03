@@ -35,13 +35,18 @@
         .nav-link:last-child {
             border-right: none;
         }
-
+        .active{
+          color:#7700ffab;
+          box-shadow: 5px 5px 15px rgb(104, 84, 255);
+        }
         .nav-link:hover {
-            background-color: #00d4ff;
+            background-color: #8f78f7ca;
+            box-shadow: 5px 5px 15px rgb(104, 84, 255);
+            transition: 1s;
         }
 
         .nav-link.active {
-            background-color: #00d4ff;
+            background-color: #00d5ffc2;
             font-weight: bold;
         }
 
@@ -193,7 +198,13 @@ overflow:auto;
   background-color: #2e2e2e;
   z-index:0;
 }
-
+.container:hover{
+  
+  
+  box-shadow: 0px 25px 30px rgb(99, 9, 255),0px -25px 30px rgb(99, 9, 255),25px 0px 30px rgb(99, 9, 255),-25px 0px 30px rgb(99, 9, 255);
+  transition: 1s;
+  
+}
 .language {
   color: white;
   background-color: #1f4287;
