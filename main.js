@@ -49,5 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 x.classList.remove("responsive");
             } else {
                 x.classList.add("responsive");
+                document.body.position="fixed";
             }
         }
