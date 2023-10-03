@@ -1,82 +1,113 @@
-  
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="icon" type="image/x-icon" href="images/favicon.png">
-      <link rel="stylesheet" href="style.css" />
-      <link rel="stylesheet" href="prism.css" />
-  
-      <title>Images</title>
-    </head>
-    <body>
-      <div class="navbar">
-        <div class="logo-container">
-            <img src="images/AK logo.png" alt="logo" height="100px" width="300px" />
-        </div>
-        <div class="nav-content" id="nav-content">
-            <a href="index.html" class="nav-link">Intro</a>
-            <a href="Editor.html" class="nav-link">Editors</a>
-            <a href="Attribute.html" class="nav-link">Attributes</a>
-            <a href="Heading.html" class="nav-link">Headings</a>
-            <a href="paragraph.html" class="nav-link">Paragraphs</a>
-            <a href="Style.html" class="nav-link">Styles</a>
-            <a href="formatting.html" class="nav-link">Formatting</a>
-            <a href="Quotations.html" class="nav-link">Quotation</a>
-            <a href="Colors.html" class="nav-link">Colors</a>
-            <a href="Css.html" class="nav-link">Css</a>
-            <a href="Links.html" class="nav-link">Links</a>
-            <a href="Images.html" class="nav-link active">Images</a>
-            <a href="Tables.html" class="nav-link">Tables</a>
-            <a href="lists.html" class="nav-link">Lists</a>
-            <a href="Iframes.html" class="nav-link">Iframes</a>
-            <a href="Login.html" class="nav-link">Login</a>
-            <a href="Media.html" class="nav-link">Media</a>
-            <a href="Compiler.html" class="nav-link">Compiler</a>
-            <!-- Add more links here -->
-        </div>
-    </div>
-     <hr id="up"><hr><hr>
-    <a href="#up"><img src="images/arrow.png" height="100" width="100" style="float:right; position:absolute;right:7%;bottom:7%;position:fixed;z-index:2;"></a>
-    <script type="text/javascript">
-        // JavaScript to handle the active link
-        const navLinks = document.querySelectorAll(".nav-link");
-  
-        navLinks.forEach((link) => {
-            link.addEventListener("click", () => {
-                // Remove the "active" class from all links
-                navLinks.forEach((navLink) => {
-                    navLink.classList.remove("active");
-                });
-  
-                // Add the "active" class to the clicked link
-                link.classList.add("active");
-            });
-        });
-    </script>
-    <br><br><br><hr>
+<!DOCTYPE html>
+<html lang="en">
 
-   <!-- This is for information -->
-   <div class="info">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="images/favicon.png">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="prism.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Images</title>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="logo-container">
+      <img src="images/AK logo.png" alt="logo" height="100px" width="300px" />
+    </div>
+    <div class="nav-content" id="nav-content">
+      <a href="index.html" class="nav-link">Intro</a>
+      <a href="Editor.html" class="nav-link">Editors</a>
+      <a href="Attribute.html" class="nav-link">Attributes</a>
+      <a href="Heading.html" class="nav-link">Headings</a>
+      <a href="paragraph.html" class="nav-link">Paragraphs</a>
+      <a href="Style.html" class="nav-link">Styles</a>
+      <a href="formatting.html" class="nav-link">Formatting</a>
+      <a href="Quotations.html" class="nav-link">Quotation</a>
+      <a href="Colors.html" class="nav-link">Colors</a>
+      <a href="Css.html" class="nav-link">Css</a>
+      <a href="Links.html" class="nav-link">Links</a>
+      <a href="Images.html" class="nav-link active">Images</a>
+      <a href="Tables.html" class="nav-link">Tables</a>
+      <a href="lists.html" class="nav-link">Lists</a>
+      <a href="Iframes.html" class="nav-link">Iframes</a>
+      <a href="Login.html" class="nav-link">Login</a>
+      <a href="Media.html" class="nav-link">Media</a>
+      <a href="Compiler.html" class="nav-link">Compiler</a>
+      <!-- Add more links here -->
+      <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
+        <input type="checkbox" role="button" aria-label="Display the menu" class="menu">
+      </a>
+    </div>
+  </div>
+  <hr id="up">
+  <hr>
+  <hr>
+  <div class="nav-hamburger" id="nav-hamburger">
+    <a href="index.html" class="nav-link">Intro</a>
+    <a href="Editor.html" class="nav-link">Editors</a>
+    <a href="Attribute.html" class="nav-link">Attributes</a>
+    <a href="Heading.html" class="nav-link">Headings</a>
+    <a href="paragraph.html" class="nav-link">Paragraphs</a>
+    <a href="Style.html" class="nav-link">Styles</a>
+    <a href="formatting.html" class="nav-link">Formatting</a>
+    <a href="Quotations.html" class="nav-link">Quotation</a>
+    <a href="Colors.html" class="nav-link">Colors</a>
+    <a href="Css.html" class="nav-link">Css</a>
+    <a href="Links.html" class="nav-link">Links</a>
+    <a href="Images.html" class="nav-link">Images</a>
+    <a href="Tables.html" class="nav-link">Tables</a>
+    <a href="lists.html" class="nav-link">Lists</a>
+    <a href="Iframes.html" class="nav-link">Iframes</a>
+    <a href="Login.html" class="nav-link">Login</a>
+    <a href="Media.html" class="nav-link">Media</a>
+    <a href="Compiler.html" class="nav-link">Compiler</a>
+
+    <!-- Add more links here -->
+  </div>
+  <a href="#up"><img class="bookmarkarrow" src="images/arrow.png" height="100" width="100" style="float:right; position:absolute;right:7%;bottom:7%;position:fixed;z-index:2;"></a>
+  <script type="text/javascript">
+    // JavaScript to handle the active link
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        // Remove the "active" class from all links
+        navLinks.forEach((navLink) => {
+          navLink.classList.remove("active");
+        });
+
+        // Add the "active" class to the clicked link
+        link.classList.add("active");
+      });
+    });
+  </script>
+  <br><br><br>
+  <hr>
+
+  <!-- This is for information -->
+  <div class="info">
     <h1>HTML Images Syntax </h1>
     <p>The HTML <doc>&lt;img&gt;</doc> tag is used to embed an image in a web page.
 
-        Images are not technically inserted into a web page; images are linked to web pages. The <doc>&lt;img&gt;</doc> tag creates a holding space for the referenced image.
-        
-        The <doc>&lt;img&gt;</doc> tag is empty, it contains attributes only, and does not have a closing tag.
-        
-        The <doc>&lt;img&gt;</doc> tag has two required attributes:
-        
-        <doc>src</doc> - Specifies the path to the image
-        <doc>alt</doc> - Specifies an alternate text for the image
+      Images are not technically inserted into a web page; images are linked to web pages. The <doc>&lt;img&gt;</doc>
+      tag creates a holding space for the referenced image.
+
+      The <doc>&lt;img&gt;</doc> tag is empty, it contains attributes only, and does not have a closing tag.
+
+      The <doc>&lt;img&gt;</doc> tag has two required attributes:
+
+      <doc>src</doc> - Specifies the path to the image
+      <doc>alt</doc> - Specifies an alternate text for the image
     </p>
-  
+
   </div>
-<!-- this is for code block with its out put -->
+  <!-- this is for code block with its out put -->
   <div class="codeblock">
     <h1>Example</h1>
-  <div class="block">
+    <div class="block">
       <div class="container">
         <div class="code-wrapper">
           <pre>
@@ -99,9 +130,9 @@
           <button id="copy-button">Copy</button>
         </div>
       </div>
-  
-      <span style='font-size:100px; margin-top:100px;'>&#8594;</span>
-  
+
+      <span id="arrow" style='font-size:100px; margin-top:100px;'>&#8594;</span>
+
       <div class="container">
         <div class="code-wrapper">
           <pre>
@@ -122,12 +153,12 @@
     <h1>Image Size - Width and Height</h1>
     <p>You can use the <doc>style</doc> attribute to specify the width and height of an image.
     </p>
-  
+
   </div>
-<!-- this is for code block with its out put -->
+  <!-- this is for code block with its out put -->
   <div class="codeblock">
     <h1>Example</h1>
-  <div class="block">
+    <div class="block">
       <div class="container">
         <div class="code-wrapper">
           <pre>
@@ -150,9 +181,9 @@
           <button id="copy-button">Copy</button>
         </div>
       </div>
-  
-      <span style='font-size:100px; margin-top:100px;'>&#8594;</span>
-  
+
+      <span id="arrow" style='font-size:100px; margin-top:100px;'>&#8594;</span>
+
       <div class="container">
         <div class="code-wrapper">
           <pre>
@@ -169,17 +200,17 @@
   <hr>
 
 
-   <!-- This is for information -->
-   <div class="info">
+  <!-- This is for information -->
+  <div class="info">
     <h1>Image Floating</h1>
     <p>You can use the <doc>float</doc> property to let the image float to the right or to the left of a text:
     </p>
-  
+
   </div>
-<!-- this is for code block with its out put -->
+  <!-- this is for code block with its out put -->
   <div class="codeblock">
     <h1>Example</h1>
-  <div class="block">
+    <div class="block">
       <div class="container">
         <div class="code-wrapper">
           <pre>
@@ -212,9 +243,9 @@
           <button id="copy-button">Copy</button>
         </div>
       </div>
-  
-      <span style='font-size:100px; margin-top:100px;'>&#8594;</span>
-  
+
+      <span id="arrow" style='font-size:100px; margin-top:100px;'>&#8594;</span>
+
       <div class="container">
         <div class="code-wrapper">
           <pre>
@@ -235,15 +266,16 @@
   <!-- This is for information -->
   <div class="info">
     <h1>Common Image Formats</h1>
-    <p>Here are the most common image file types, which are supported in all browsers (Chrome, Edge, Firefox, Safari, Opera):
+    <p>Here are the most common image file types, which are supported in all browsers (Chrome, Edge, Firefox, Safari,
+      Opera):
     </p>
-  
+
   </div>
-<!-- this is for code block with its out put -->
+  <!-- this is for code block with its out put -->
   <div class="codeblock">
-  <div class="block">
-      <div class="containerimg" >
-        <div class="code-wrapper" >
+    <div class="block">
+      <div class="containerimg">
+        <div class="code-wrapper">
           <pre>
             <code id="code" >
               <img src="images/images format.png" />
@@ -256,11 +288,9 @@
     </div>
   </div>
   <hr>
-  
-      <script src="main.js" defer></script>
-      <script src="prism.js"></script>
-    </body>
-  </html>
-  
-  
- 
+
+  <script src="main.js" defer></script>
+  <script src="prism.js"></script>
+</body>
+
+</html>
