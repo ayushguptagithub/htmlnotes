@@ -1,80 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="images/favicon.png">
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="prism.css" />
 
-    <title>Information</title>
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="images/favicon.png">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="prism.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <div class="navbar">
-      <div class="logo-container">
-          <img src="images/AK logo.png" alt="logo" height="100px" width="300px" />
-      </div>
-      <div class="nav-content" id="nav-content">
-          <a href="index.html" class="nav-link active">Intro</a>
-          <a href="Editor.html" class="nav-link">Editors</a>
-          <a href="Attribute.html" class="nav-link">Attributes</a>
-          <a href="Heading.html" class="nav-link">Headings</a>
-          <a href="paragraph.html" class="nav-link">Paragraphs</a>
-          <a href="Style.html" class="nav-link">Styles</a>
-          <a href="formatting.html" class="nav-link">Formatting</a>
-          <a href="Quotations.html" class="nav-link">Quotation</a>
-          <a href="Colors.html" class="nav-link">Colors</a>
-          <a href="Css.html" class="nav-link">Css</a>
-          <a href="Links.html" class="nav-link">Links</a>
-          <a href="Images.html" class="nav-link">Images</a>
-          <a href="Tables.html" class="nav-link">Tables</a>
-          <a href="lists.html" class="nav-link">Lists</a>
-          <a href="Iframes.html" class="nav-link">Iframes</a>
-          <a href="Login.html" class="nav-link">Login</a>
-          <a href="Media.html" class="nav-link">Media</a>
-          <a href="Compiler.html" class="nav-link">Compiler</a>
-          <!-- Add more links here -->
-      </div>
+  <title>Information</title>
+</head>
+
+<body>
+
+  <div class="navbar">
+    <div class="logo-container">
+      <img src="images/AK logo.png" alt="logo" height="100px" width="300px" />
+    </div>
+    <div class="nav-content" id="nav-content">
+      <a href="index.html" class="nav-link active">Intro</a>
+      <a href="Editor.html" class="nav-link">Editors</a>
+      <a href="Attribute.html" class="nav-link">Attributes</a>
+      <a href="Heading.html" class="nav-link">Headings</a>
+      <a href="paragraph.html" class="nav-link">Paragraphs</a>
+      <a href="Style.html" class="nav-link">Styles</a>
+      <a href="formatting.html" class="nav-link">Formatting</a>
+      <a href="Quotations.html" class="nav-link">Quotation</a>
+      <a href="Colors.html" class="nav-link">Colors</a>
+      <a href="Css.html" class="nav-link">Css</a>
+      <a href="Links.html" class="nav-link">Links</a>
+      <a href="Images.html" class="nav-link">Images</a>
+      <a href="Tables.html" class="nav-link">Tables</a>
+      <a href="lists.html" class="nav-link">Lists</a>
+      <a href="Iframes.html" class="nav-link">Iframes</a>
+      <a href="Login.html" class="nav-link">Login</a>
+      <a href="Media.html" class="nav-link">Media</a>
+      <a href="Compiler.html" class="nav-link">Compiler</a>
+      <!-- Add more links here -->
+      <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
+        <input type="checkbox" role="button" aria-label="Display the menu" class="menu">
+      </a>
+    </div>
   </div>
-   <hr id="up"><hr><hr>
-    <a href="#up"><img src="images/arrow.png" height="100" width="100" style="float:right; position:absolute;right:7%;bottom:7%;position:fixed;z-index:2;"></a>
+  <hr id="up">
+  <hr>
+  <hr>
+  <div class="nav-hamburger" id="nav-hamburger">
+    <a href="index.html" class="nav-link">Intro</a>
+    <a href="Editor.html" class="nav-link">Editors</a>
+    <a href="Attribute.html" class="nav-link">Attributes</a>
+    <a href="Heading.html" class="nav-link">Headings</a>
+    <a href="paragraph.html" class="nav-link">Paragraphs</a>
+    <a href="Style.html" class="nav-link">Styles</a>
+    <a href="formatting.html" class="nav-link">Formatting</a>
+    <a href="Quotations.html" class="nav-link">Quotation</a>
+    <a href="Colors.html" class="nav-link">Colors</a>
+    <a href="Css.html" class="nav-link">Css</a>
+    <a href="Links.html" class="nav-link">Links</a>
+    <a href="Images.html" class="nav-link">Images</a>
+    <a href="Tables.html" class="nav-link">Tables</a>
+    <a href="lists.html" class="nav-link">Lists</a>
+    <a href="Iframes.html" class="nav-link">Iframes</a>
+    <a href="Login.html" class="nav-link">Login</a>
+    <a href="Media.html" class="nav-link">Media</a>
+    <a href="Compiler.html" class="nav-link">Compiler</a>
+
+    <!-- Add more links here -->
+  </div>
+  <a href="#up"><img class="bookmarkarrow" src="images/arrow.png" height="100" width="100" style="float:right; position:absolute;right:7%;bottom:7%;position:fixed;z-index:2;"></a>
   <script type="text/javascript">
-      // JavaScript to handle the active link
-      const navLinks = document.querySelectorAll(".nav-link");
+    // JavaScript to handle the active link
+    const navLinks = document.querySelectorAll(".nav-link");
 
-      navLinks.forEach((link) => {
-          link.addEventListener("click", () => {
-              // Remove the "active" class from all links
-              navLinks.forEach((navLink) => {
-                  navLink.classList.remove("active");
-              });
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        // Remove the "active" class from all links
+        navLinks.forEach((navLink) => {
+          navLink.classList.remove("active");
+        });
 
-              // Add the "active" class to the clicked link
-              link.classList.add("active");
-          });
+        // Add the "active" class to the clicked link
+        link.classList.add("active");
       });
+    });
   </script>
-  <br><br><br><hr>
+  <br><br><br>
+  <hr>
 
-    <div class="info">
+  <div class="info">
     <h1>HTML</h1>
     <p>HTML stands for Hyper Text Markup Language
-    HTML is the standard markup language for creating Web pages
-    HTML describes the structure of a Web page
-    HTML consists of a series of elements
-        HTML elements tell the browser how to display the content
-        HTML elements label pieces of content such as "this is a heading", "this is a paragraph", "this is a link",
-        etc.
+      HTML is the standard markup language for creating Web pages
+      HTML describes the structure of a Web page
+      HTML consists of a series of elements
+      HTML elements tell the browser how to display the content
+      HTML elements label pieces of content such as "this is a heading", "this is a paragraph", "this is a link",
+      etc.
     </p>
   </div>
-<hr>
-<div class="codeblock">
-  <h1>Example</h1>
-<div class="block">
-    <div class="container">
-      <div class="code-wrapper">
-        <pre>
+  <hr>
+  <div class="codeblock">
+    <h1>Example</h1>
+    <div class="block">
+      <div class="container">
+        <div class="code-wrapper">
+          <pre>
           <code id="code" class="language-markup">
             &lt;!DOCTYPE html&gt;
             &lt;html&gt;
@@ -88,15 +119,15 @@
             &lt;/html&gt;
           </code>
         </pre>
-        <button id="copy-button">Copy</button>
+          <button id="copy-button">Copy</button>
+        </div>
       </div>
-    </div>
 
-    <span style='font-size:100px; margin-top:100px;'>&#8594;</span>
+      <span id="arrow" style='font-size:100px; margin-top:100px;'>&#8594;</span>
 
-    <div class="container">
-      <div class="code-wrapper">
-        <pre>
+      <div class="container">
+        <div class="code-wrapper">
+          <pre>
           <code id="code" class="">
             <!DOCTYPE html>
             <html>
@@ -113,52 +144,54 @@
 
           </code>
         </pre>
-        <button id="copy-button">Copy</button>
+          <button id="copy-button">Copy</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<hr>
-
+  <hr>
 
 
-<div class="info">
-  <h1>Explanation</h1>
-  <p>
-    The <doc>&lt;!DOCTYPE html&gt;</doc> declaration defines that this document is an HTML5 document.<br>
-    The <doc>&lt;html&gt;</doc> element is the root element of an HTML page.<br>
-    The <doc>&lt;head&gt;</doc> element contains meta information about the HTML page.<br>
-    The <doc>&lt;body&gt;</doc> element containstitle&gt; element specifies a title for the HTML page (which is shown in the browser's title bar or in the page's tab).<br>
-    The <doc>&lt;body&gt;</doc> element defines the document's body and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.<br>
-    The <doc>&lt;h1&gt;</doc> element defines a large heading.<br>
-    The <doc>&lt;p&gt; </doc>element defines a paragraph.
-  </p>
-</div>
-<hr>
+
+  <div class="info">
+    <h1>Explanation</h1>
+    <p>
+      The <doc>&lt;!DOCTYPE html&gt;</doc> declaration defines that this document is an HTML5 document.<br>
+      The <doc>&lt;html&gt;</doc> element is the root element of an HTML page.<br>
+      The <doc>&lt;head&gt;</doc> element contains meta information about the HTML page.<br>
+      The <doc>&lt;body&gt;</doc> element containstitle&gt; element specifies a title for the HTML page (which is shown
+      in the browser's title bar or in the page's tab).<br>
+      The <doc>&lt;body&gt;</doc> element defines the document's body and is a container for all the visible contents,
+      such as headings, paragraphs, images, hyperlinks, tables, lists, etc.<br>
+      The <doc>&lt;h1&gt;</doc> element defines a large heading.<br>
+      The <doc>&lt;p&gt; </doc>element defines a paragraph.
+    </p>
+  </div>
+  <hr>
 
   <div class="info">
     <h1>What is an HTML Element?</h1>
     <p>
       An HTML element is defined by a start tag, some content, and an end tag:
     </p>
-  
+
     <p>
       <doc>&lt;tagname&gt;</doc> Content goes here... <doc>&lt;/tagname&gt;</doc>
     </p>
-  
+
     <p>
       The HTML element is everything from the start tag to the end tag:
     </p>
-  
+
     <p>
       <doc>&lt;h1&gt;</doc>My First Heading<doc>&lt;/h1&gt;</doc>
       <doc>&lt;p&gt;</doc>My first paragraph.<doc>&lt;/p&gt;</doc>
     </p>
-  
+
   </div>
-  
-<hr>
+
+  <hr>
 
   <!-- This is for information -->
   <div class="info">
@@ -166,15 +199,15 @@
     <p>
       HTML links are defined with the <doc>&lt;a&gt;</doc> tag:
     </p>
-  
+
   </div>
-  
-<div class="codeblock">
-  <h1>Example</h1>
-<div class="block">
-    <div class="container">
-      <div class="code-wrapper">
-        <pre>
+
+  <div class="codeblock">
+    <h1>Example</h1>
+    <div class="block">
+      <div class="container">
+        <div class="code-wrapper">
+          <pre>
           <code id="code" class="language-markup">
             &lt;!DOCTYPE html&gt;
             &lt;html&gt;
@@ -190,26 +223,26 @@
             &lt;/html&gt;
           </code>
         </pre>
-        <button id="copy-button">Copy</button>
+          <button id="copy-button">Copy</button>
+        </div>
       </div>
-    </div>
 
-    <span style='font-size:100px; margin-top:100px;'>&#8594;</span>
+      <span id="arrow" style='font-size:100px; margin-top:100px;'>&#8594;</span>
 
-    <div class="container">
-      <div class="code-wrapper">
-        <pre>
+      <div class="container">
+        <div class="code-wrapper">
+          <pre>
           <code id="code" class="">
             <img src="images/a tag img.png"/>
 
           </code>
         </pre>
-        <button id="copy-button">Copy</button>
+          <button id="copy-button">Copy</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<hr>
+  <hr>
   <!-- This is for information -->
   <div class="info">
     <h1>HTML Images</h1>
@@ -218,13 +251,13 @@
 
       The source file <doc>(src)</doc>, alternative text <doc>(alt)</doc>, width, and height are provided as attributes:
     </p>
-  
+
   </div>
 
-   <!-- this is for code block with its out put -->
-   <div class="codeblock">
+  <!-- this is for code block with its out put -->
+  <div class="codeblock">
     <h1>Example</h1>
-  <div class="block">
+    <div class="block">
       <div class="container">
         <div class="code-wrapper">
           <pre>
@@ -245,9 +278,9 @@
           <button id="copy-button">Copy</button>
         </div>
       </div>
-  
-      <span style='font-size:100px; margin-top:100px;'>&#8594;</span>
-  
+
+      <span id="arrow" style='font-size:100px; margin-top:100px;'>&#8594;</span>
+
       <div class="container">
         <div class="code-wrapper">
           <pre>
@@ -261,7 +294,7 @@
       </div>
     </div>
   </div>
-<hr>
+  <hr>
 
 
 
@@ -270,7 +303,8 @@
 
 
 
-    <script src="main.js" defer></script>
-    <script src="prism.js"></script>
-  </body>
+  <script src="main.js" defer></script>
+  <script src="prism.js"></script>
+</body>
+
 </html>
