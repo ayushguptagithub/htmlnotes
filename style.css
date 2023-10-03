@@ -16,6 +16,7 @@
             background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(17,62,255,1) 100%, rgba(0,212,255,1) 100%);
             overflow-x: auto;
             white-space: nowrap;
+            
         }
 
         .nav-content {
@@ -72,28 +73,30 @@
             -webkit-text-fill-color: transparent;
             -webkit-background-clip: text;
         }
-
+        .navbar{
+          height:15%;
+        }
         .logo-container img{
             width: 95%;
         }
         .nav-hamburger.responsive{
-          overflow-y:scroll;
+          overflow-x:scroll;
             position: fixed;
             background:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(17,62,255,1) 100%, rgba(0,212,255,1) 100%);
             display: flex;
-            /* top:58px; */
-            margin-top:58px;
+            top:15%;
+            /* margin-top:58px; */
             flex-direction: column;
             width: 100%;
-            height: 100%;
+            height: 85%;
             z-index:5;
             animation: hamburgeranimation 1s;
             animation-direction: normal;
         }
         }
         @keyframes hamburgeranimation {
-          0%   {right: 300px; top: 0px;}
-          100%  { right: 0px; top: 0px;}
+          0%   {right: 300px; top: 15%;}
+          100%  { right: 0px; top: 15%;}
       
         }
 .content {
