@@ -87,7 +87,7 @@
         .nav-hamburger.responsive{
           overflow-x:scroll;
             position: fixed;
-            background:linear-gradient(90deg, rgba(2,0,36,0.8) 0%, rgba(17,62,255,0.9) 100%, rgba(0,212,255,0.9) 100%);
+            background:linear-gradient(90deg, rgb(9, 0, 180) 0%, rgb(78, 110, 255) 100%, rgb(118, 232, 255) 100%);
             display: flex;
             top:15%;
             /* margin-top:58px; */
@@ -125,7 +125,7 @@ body {
   display: flex;
 }
 .codeblock{
-   background: linear-gradient(90deg, rgba(2,0,36,0.5) 0%, rgba(17,62,255,0.5) 100%, rgba(0,212,255,0.5) 100%);
+   background: linear-gradient(90deg, rgb(9, 0, 180) 0%, rgb(78, 110, 255) 100%, rgb(118, 232, 255) 100%);
   margin: 30px;
   border-radius: 30px;
 }
