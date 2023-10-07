@@ -125,7 +125,7 @@ body {
   display: flex;
 }
 .codeblock{
-   background: linear-gradient(90deg,rgb(118, 232, 255) 100%, rgb(78, 110, 255) 100%, rgb(118, 232, 255) 100%);
+   background: linear-gradient(90deg,rgb(118, 232, 255) 0%, rgb(78, 110, 255) 100%, rgb(118, 232, 255) 100%);
   margin: 30px;
   border-radius: 30px;
 }
