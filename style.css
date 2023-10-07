@@ -113,7 +113,7 @@ brr{
   margin-top:50px;
 }
 body {
-  background-color: aliceblue;;
+  
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -125,7 +125,7 @@ body {
   display: flex;
 }
 .codeblock{
-   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(17,62,255,1) 100%, rgba(0,212,255,1) 100%);
+   background: linear-gradient(90deg, rgba(2,0,36,0.5) 0%, rgba(17,62,255,0.5) 100%, rgba(0,212,255,0.5) 100%);
   margin: 30px;
   border-radius: 30px;
 }
