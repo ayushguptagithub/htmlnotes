@@ -325,7 +325,11 @@ code{
     position: relative;
     left:-88px;
   }
-
+.bookmarkarrow:before {
+    content:"";
+    height:10%;
+    width: 20%;
+  }
   .bookmarkarrow {
 
     height:10%;
